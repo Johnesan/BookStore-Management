@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookStore_Management.Views.AdminArea"
+             Title="Admin Area">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+            <Label Text="Welcome Admin!" FontSize="23" Margin="0,0,0,10"/>
+            <Button Text="View Books List" Clicked="BooksListClicked" BackgroundColor="Yellow"/>
+            <Button Text="Customer Orders" Clicked="CustomerOrdersClicked" BackgroundColor="GreenYellow"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

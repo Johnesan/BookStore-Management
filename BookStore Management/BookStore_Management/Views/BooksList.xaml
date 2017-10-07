@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookStore_Management.Views.BooksList"
+             Title="All Books">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+" Clicked="OnAddButtonClicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource" Android="addNew.png"/>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <Label Text="No Book Available. Please Add Books!" x:Name="NoneAvailableLabel"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ListView  x:Name="BooksListView"
+                       HasUnevenRows="True"
+                       ItemSelected="OnSingleBookSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Orientation="Vertical" Padding="7,7,3,7">
+                                        <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
+                                            <Label Text="{Binding Title}"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="20"/>
+                                            <Label Text="{Binding Price}"   HorizontalOptions="EndAndExpand"   HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontSize="12" TextColor="Green"  Margin="0,0,20,0"/>
+                                        </StackLayout>
+                                        <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
+                                            <Label Text="{Binding Author, StringFormat='By {0}'}"  HorizontalOptions="Start" VerticalTextAlignment="Center" FontSize="12"/>
+                                            <Label Text="{Binding NumberOfCopies, StringFormat='{0} left'}" HorizontalOptions="EndAndExpand" TextColor="Red" Margin="0,0,20,0"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

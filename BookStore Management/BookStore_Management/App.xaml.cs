@@ -1,4 +1,5 @@
-﻿using BookStore_Management.Views;
+﻿using BookStore_Management.Data;
+using BookStore_Management.Views;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -8,31 +9,26 @@ namespace BookStore_Management
 {
     public partial class App : Application
     {
+
+        private static StoreDB _database;
+        public static StoreDB database
+        {
+            get
+            {
+                if (_database == null)
+                {
+                    _database = new StoreDB(DependencyService.Get<IFileHelper>().GetLocalFilePath("storedb.db3"));
+                }
+                return _database;
+            }
+        }
+        public int ResumeAtBookId { get; set; }
+        public int ResumeAtOrderId { get; set; }
         public App()
         {
             InitializeComponent();
 
-            SetMainPage();
-        }
-
-        public static void SetMainPage()
-        {
-            Current.MainPage = new TabbedPage
-            {
-                Children =
-                {
-                    new NavigationPage(new ItemsPage())
-                    {
-                        Title = "Browse",
-                        Icon = Device.OnPlatform("tab_feed.png",null,null)
-                    },
-                    new NavigationPage(new AboutPage())
-                    {
-                        Title = "About",
-                        Icon = Device.OnPlatform("tab_about.png",null,null)
-                    },
-                }
-            };
+            MainPage = new RootPage();
         }
     }
 }

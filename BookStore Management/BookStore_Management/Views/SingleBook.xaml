@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookStore_Management.Views.SingleBook"
+              Title="{Binding Title}">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15,20,15,20" VerticalOptions="StartAndExpand">
+                <Grid RowSpacing="2" ColumnSpacing="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="45"/>
+                        <RowDefinition Height="65"/>
+                        <RowDefinition Height="250"/>
+                        <RowDefinition Height="65"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Title:" FontSize="Medium" VerticalOptions="Center"/>
+                    <Entry Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding Title}" VerticalOptions="Center" />
+                    <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="Publisher:" VerticalOptions="Center" FontSize="Medium"/>
+                    <Entry Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding Publisher}"  VerticalOptions="Center"/>
+                    <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Text="Price:" VerticalOptions="Center" FontSize="Medium"/>
+                    <Entry Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding Price}" VerticalOptions="Center" />
+                    <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Text="Author:" VerticalOptions="Center" FontSize="Medium"/>
+                    <Entry Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding Author}" VerticalOptions="Center"/>
+                    <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Text="Number Of Copies Available:" VerticalOptions="Center" FontSize="Medium"/>
+                    <Entry Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding NumberOfCopies}"  VerticalOptions="Center" />
+                    <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="Pages:" VerticalOptions="Center" FontSize="Medium"/>
+                    <Entry Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding Pages}"  VerticalOptions="Center"/>
+                    <Button Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="4" Text="Choose Cover Image" x:Name="pickPhoto" Clicked="OnPickPhotoClicked"/>
+                    <Image Grid.Row="8" Grid.Column="0"  Grid.ColumnSpan="8" x:Name="image" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+
+                    <Button HeightRequest="50" WidthRequest="120" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" Text="Save" Clicked="OnSaveClicked" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="SkyBlue" TextColor="White" />
+                    <Button HeightRequest="50" WidthRequest="120" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="2" Text="Delete" Clicked="OnDeleteClicked" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Red" TextColor="White"/>
+                    <Button HeightRequest="50" WidthRequest="120" Grid.Row="9" Grid.Column="6" Grid.ColumnSpan="2" Text="Back To List" Clicked="Back" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Black" TextColor="White"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

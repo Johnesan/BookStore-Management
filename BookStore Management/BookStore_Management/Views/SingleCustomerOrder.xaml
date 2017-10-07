@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookStore_Management.Views.SingleCustomerOrder"
+             BackgroundColor="#efefef"
+             Title="View Order">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="0,5,0,0">
+                <Label Text="Book Details" HorizontalTextAlignment="Center" FontSize="21"/>
+                <Frame Margin="4,4,4,8"  Padding="15,20,15,20" VerticalOptions="StartAndExpand">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8" x:Name="BookCoverImage" VerticalOptions="Center" Aspect="AspectFit" HeightRequest="200"/>
+                        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="Book Title:" FontSize="Small" VerticalOptions="Center"  TextColor="#064c01"/>
+                        <Label Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="5" x:Name="BookTitleLabel" VerticalOptions="Center"  FontSize="Small" TextColor="#0e9b04" />
+                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Text="Price:" VerticalOptions="Center" FontSize="Small"  TextColor="#064c01"/>
+                        <Label Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="5" x:Name="BookPriceLabel"  VerticalOptions="Center" FontSize="Small" TextColor="#0e9b04"/>
+                        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Text="Author:" VerticalOptions="Center" FontSize="Small"  TextColor="#064c01"/>
+                        <Label Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="5" x:Name="BookAuthorLabel" VerticalOptions="Center" FontSize="Small" TextColor="#0e9b04" />
+                        <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Text="Publisher" VerticalOptions="Center" FontSize="Small"  TextColor="#064c01"/>
+                        <Label Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="5" x:Name="BookPublisherLabel" VerticalOptions="Center" FontSize="Small" TextColor="#0e9b04"/>
+                        </Grid>
+                </Frame>
+
+                <Label Text="Customer's Details" HorizontalTextAlignment="Center" FontSize="21"/>
+                <Frame Margin="4,4,4,8"  Padding="15,20,15,20" VerticalOptions="StartAndExpand">
+                    <Grid RowSpacing="2" ColumnSpacing="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="*"/>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Full Name:" FontSize="Small" VerticalOptions="Center" TextColor="#064c01"/>
+                        <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding FullName}" VerticalOptions="Center" FontSize="Small" TextColor="#0e9b04"/>
+                        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="Address:" VerticalOptions="Center" FontSize="Small" TextColor="#064c01"/>
+                        <Label Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding Address}"  VerticalOptions="Center" FontSize="Small" TextColor="#0e9b04"/>
+                        <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Text="Phone Number:" VerticalOptions="Center" FontSize="Small" TextColor="#064c01"/>
+                        <Label Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding PhoneNumber}" VerticalOptions="Center" FontSize="Small" TextColor="#0e9b04"/>
+                        <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Text="Gender:" VerticalOptions="Center" FontSize="Small" TextColor="#064c01"/>
+                        <Label Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding Gender}" VerticalOptions="Center" FontSize="Small" TextColor="#0e9b04"/>
+                        <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Text="Order Date:" VerticalOptions="Center" FontSize="Small" TextColor="#064c01"/>
+                        <Label Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding Date}"  VerticalOptions="Center" FontSize="Small" TextColor="#0e9b04"/>
+                        <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Text="Order Type:" VerticalOptions="Center" FontSize="Small" TextColor="#064c01"/>
+                        <Label Grid.Row="5" Grid.Column="3" Grid.ColumnSpan="5" Text="{Binding OrderType}" TextColor="Red" VerticalOptions="Center" FontSize="Small"/>
+                        <Label Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Text="Order Completed?:" VerticalOptions="Center" FontSize="Small" TextColor="#064c01"/>
+                        <Switch Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="4"  IsToggled="{Binding Path=Completed}"/>
+                    </Grid>
+                </Frame>
+                <StackLayout Orientation="Horizontal" Padding="5,3,5,3">
+                <Button HeightRequest="50" WidthRequest="120"  Text="Save" Clicked="OnSaveClicked" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="SkyBlue" TextColor="White" />
+                    <Button HeightRequest="50" WidthRequest="120" Text="Delete" Clicked="OnDeleteClicked" VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Red" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

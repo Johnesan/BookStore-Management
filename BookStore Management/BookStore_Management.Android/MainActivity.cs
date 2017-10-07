@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Plugin.Permissions;
 
 namespace BookStore_Management.Droid
 {
@@ -17,6 +18,11 @@ namespace BookStore_Management.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             LoadApplication(new App());
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

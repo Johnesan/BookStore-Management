@@ -1,7 +1,11 @@
 ﻿{
   "dependencies": {
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
-    "Xamarin.Forms": "2.3.4.224"
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.4.0",
+    "sqlite-net-pcl": "1.4.118",
+    "SQLiteNetExtensions": "1.3.0",
+    "Xam.Plugin.Connectivity": "3.0.3",
+    "Xam.Plugin.Media": "3.0.1",
+    "Xamarin.Forms": "2.4.0.280"
   },
   "frameworks": {
     "uap10.0": {}

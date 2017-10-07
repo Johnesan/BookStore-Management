@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BookStore_Management.Views.CustomerOrdersList"
+             Title="Orders">
+    <ContentPage.Content>
+        <ScrollView>
+            <Label Text="No Book Available. Please Add Books!" x:Name="NoneAvailableLabel"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ListView  x:Name="OrdersListView"
+                           HasUnevenRows="True"
+                           ItemSelected="OnSingleOrderSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <StackLayout Orientation="Vertical" Padding="7,7,3,7">
+                                        <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
+                                            <Label Text="{Binding FullName}"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="20"/>
+                                            <Image Source="completed.png" IsVisible="{Binding Completed}" HorizontalOptions="EndAndExpand"/>
+                                            </StackLayout>
+                                        <StackLayout Orientation="Vertical" Margin="20,0,0,0">
+                                            <Label Text="{Binding BookTitle}"  HorizontalOptions="Start" VerticalTextAlignment="Center" FontSize="12"/>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="{Binding Date , StringFormat='{0:dd/MM/yyyy}'}" HorizontalOptions="Start" TextColor="Green"/>
+                                                <Label Text="{Binding OrderType}" TextColor="Red" HorizontalOptions="EndAndExpand" Margin="0,0,20,0"/>
+                                            </StackLayout>
+                                            
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
