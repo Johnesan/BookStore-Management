@@ -16,7 +16,14 @@ namespace BookStore_Management.Views
     {
         public CustomerOrdersList()
         {
+
             InitializeComponent();
+            ObservableCollection<Order> orders = new ObservableCollection<Order>(App.database.GetAllOrders());
+            if (orders.Count == 0)
+            {
+                NoneAvailableLabel.IsEnabled = true;
+                NoneAvailableLabel.IsVisible = true;
+            }
         }
 
         protected override void OnAppearing()
@@ -27,11 +34,7 @@ namespace BookStore_Management.Views
             ((App)App.Current).ResumeAtOrderId = -1;
             ObservableCollection<Order> orders = new ObservableCollection<Order>(App.database.GetAllOrders());
 
-            if (orders.Count == 0)
-            {
-                NoneAvailableLabel.IsEnabled = true;
-                NoneAvailableLabel.IsVisible = true;
-            }
+          
             OrdersListView.ItemsSource = orders;
         }
 

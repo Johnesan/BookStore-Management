@@ -12,7 +12,9 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <Label Text="No Book Available. Please Add Books!" x:Name="NoneAvailableLabel"/>
+            <StackLayout>
+                <Label Text="No Book Available. Please Add Books!" x:Name="NoneAvailableLabel"/>
+            </StackLayout>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />

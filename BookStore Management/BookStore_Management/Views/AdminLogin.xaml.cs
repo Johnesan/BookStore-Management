@@ -16,8 +16,12 @@ namespace BookStore_Management.Views
         {
             InitializeComponent();
             var loginCredentials = App.database.GetLoginCredentials();
-            UserName.Text = loginCredentials.Username;
-            Password.Text = loginCredentials.Password;
+            if (loginCredentials != null)
+            {
+                UserName.Text = loginCredentials.Username;
+                Password.Text = loginCredentials.Password;
+            }
+           
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)

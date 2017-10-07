@@ -39,14 +39,8 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Data\StoreDB.cs" />
-    <Compile Include="Helpers\MessengingCenterAlert.cs" />
-    <Compile Include="Helpers\ObservableObject.cs" />
-    <Compile Include="Helpers\ObservableRangeCollection.cs" />
     <Compile Include="IFileHelper.cs" />
-    <Compile Include="Models\BaseDataObject.cs" />
     <Compile Include="Models\Book.cs" />
-    <Compile Include="Models\Customer.cs" />
-    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\LoginCredentials.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,14 +51,6 @@
       <DependentUpon>RootPageMaster.xaml</DependentUpon>
     </Compile>
     <Compile Include="RootPageMenuItem.cs" />
-    <Compile Include="Services\IDataStore.cs" />
-    <Compile Include="Services\MockDataStore.cs" />
-    <Compile Include="ViewModels\AboutViewModel.cs" />
-    <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\ItemDetailViewModel.cs" />
-    <Compile Include="Views\AboutPage.xaml.cs">
-      <DependentUpon>AboutPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\AdminArea.xaml.cs">
       <DependentUpon>AdminArea.xaml</DependentUpon>
     </Compile>
@@ -92,10 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\AboutPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
