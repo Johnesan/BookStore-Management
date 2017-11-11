@@ -88,6 +88,8 @@ namespace BookStore_Management.Views
 
 
             App.database.SaveOrder(order);
+            SelectedBook.NumberOfCopies -= 1;
+            App.database.SaveBook(SelectedBook);
             await Navigation.PopAsync();
 
         }
