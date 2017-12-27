@@ -12,7 +12,7 @@
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
-                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="35"/>
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="30"/>
                             <RowDefinition Height="30"/>
@@ -31,7 +31,7 @@
                         <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Text="Book Title:" FontSize="Small" VerticalOptions="Center"  TextColor="#064c01"/>
                         <Label Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="5" x:Name="BookTitleLabel" VerticalOptions="Center"  FontSize="Small" TextColor="#0e9b04" />
                         <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Text="Price:" VerticalOptions="Center" FontSize="Small"  TextColor="#064c01"/>
-                        <Label Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="5" x:Name="BookPriceLabel"  VerticalOptions="Center" FontSize="Small" TextColor="#0e9b04"/>
+                        <Label Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="5" x:Name="BookPriceLabel"  VerticalOptions="Center" FontSize="Small" TextColor="Red"/>
                         <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Text="Author:" VerticalOptions="Center" FontSize="Small"  TextColor="#064c01"/>
                         <Label Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="5" x:Name="BookAuthorLabel" VerticalOptions="Center" FontSize="Small" TextColor="#0e9b04" />
                         <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Text="Publisher" VerticalOptions="Center" FontSize="Small"  TextColor="#064c01"/>

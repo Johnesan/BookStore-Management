@@ -32,6 +32,12 @@ namespace BookStore_Management.Views
                 NoneAvailableLabel.IsEnabled = true;
                 NoneAvailableLabel.IsVisible = true;
             }
+            else
+            {
+
+                NoneAvailableLabel.IsEnabled = false;
+                NoneAvailableLabel.IsVisible = false;
+            }
             BooksListView.ItemsSource = books;
             
 

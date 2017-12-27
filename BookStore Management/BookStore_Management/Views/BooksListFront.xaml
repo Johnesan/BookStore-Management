@@ -7,39 +7,39 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="No Book Available. Please Add Books!" x:Name="NoneAvailableLabel"/>
-            </StackLayout>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
+                <Label Text="No Book Available. Please Add Books from the Admin section!" HorizontalTextAlignment="Center" FontSize="22" x:Name="NoneAvailableLabel"  Margin="3,5,3,5"/>
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
 
-                <ListView  x:Name="BooksListView"
+                    <ListView  x:Name="BooksListView"
                        HasUnevenRows="True"
                        ItemSelected="OnSingleBookSelected">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.View>
-                                    <Frame Margin="7,5,7,5">
-                                        <StackLayout Orientation="Vertical" Padding="7,7,3,7">
-                                            <Label Text="{Binding Title}"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Green" FontSize="21"/>
-                                            <Image x:Name="BookImage">
-                                                <Image.Source>
-                                                    <FileImageSource File="{Binding CoverImage}"/>
-                                                </Image.Source>
-                                            </Image>
-                                            <Label Text="{Binding Price, StringFormat='Price: {0}'}"   HorizontalOptions="Center"   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="14" TextColor="Red" Margin="0,0,20,0"/>
-                                            <Label Text="{Binding Author, StringFormat='By {0}'}"  HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="14"/>
-                                            <Label Text="{Binding Pages, StringFormat='Number of Pages {0}'}"  HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="14"/>
-                                        </StackLayout>
-                                    </Frame>
-                                </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Frame Margin="7,5,7,5">
+                                            <StackLayout Orientation="Vertical" Padding="7,7,3,7">
+                                                <Label Text="{Binding Title}"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="Green" FontSize="21"/>
+                                                <Image x:Name="BookImage">
+                                                    <Image.Source>
+                                                        <FileImageSource File="{Binding CoverImage}"/>
+                                                    </Image.Source>
+                                                </Image>
+                                                <Label Text="{Binding Price, StringFormat='Price: {0}'}"   HorizontalOptions="Center"   HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="14" TextColor="Red" Margin="0,0,20,0"/>
+                                                <Label Text="{Binding Author, StringFormat='By {0}'}"  HorizontalOptions="Center" VerticalTextAlignment="Center" TextColor="Green" FontSize="14"/>
+                                                <Label Text="{Binding Pages, StringFormat='Number of Pages: {0}'}"  HorizontalOptions="Center" VerticalTextAlignment="Center" FontSize="14"/>
+                                            </StackLayout>
+                                        </Frame>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

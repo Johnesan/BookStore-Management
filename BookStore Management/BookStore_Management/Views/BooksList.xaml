@@ -12,36 +12,37 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Label Text="No Book Available. Please Add Books!" x:Name="NoneAvailableLabel"/>
-            </StackLayout>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <ListView  x:Name="BooksListView"
+            <StackLayout VerticalOptions="FillAndExpand">
+                <Label Text="No Book Available. Please Add Books!" HorizontalTextAlignment="Center" FontSize="22" x:Name="NoneAvailableLabel"  Margin="3,5,3,5"/>
+
+                <Grid VerticalOptions="FillAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ListView  x:Name="BooksListView"
                        HasUnevenRows="True"
                        ItemSelected="OnSingleBookSelected">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.View>
-                                    <StackLayout Orientation="Vertical" Padding="7,7,3,7">
-                                        <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
-                                            <Label Text="{Binding Title}"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="20"/>
-                                            <Label Text="{Binding Price}"   HorizontalOptions="EndAndExpand"   HorizontalTextAlignment="End" VerticalTextAlignment="Center" FontSize="12" TextColor="Green"  Margin="0,0,20,0"/>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <StackLayout Orientation="Vertical" Padding="7,7,3,7">
+                                            <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
+                                                <Label Text="{Binding Title}"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="20"/>
+                                                <Label Text="{Binding Price}"   HorizontalOptions="EndAndExpand"   HorizontalTextAlignment="End" VerticalTextAlignment="Start" FontSize="12" TextColor="Green"  Margin="0,0,20,0"/>
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
+                                                <Label Text="{Binding Author, StringFormat='By {0}'}"  HorizontalOptions="Start" VerticalTextAlignment="Center" FontSize="12"/>
+                                                <Label Text="{Binding NumberOfCopies, StringFormat='{0} left'}" HorizontalOptions="EndAndExpand" TextColor="Red" Margin="0,0,20,0"/>
+                                            </StackLayout>
                                         </StackLayout>
-                                        <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
-                                            <Label Text="{Binding Author, StringFormat='By {0}'}"  HorizontalOptions="Start" VerticalTextAlignment="Center" FontSize="12"/>
-                                            <Label Text="{Binding NumberOfCopies, StringFormat='{0} left'}" HorizontalOptions="EndAndExpand" TextColor="Red" Margin="0,0,20,0"/>
-                                        </StackLayout>
-                                    </StackLayout>
-                                </ViewCell.View>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

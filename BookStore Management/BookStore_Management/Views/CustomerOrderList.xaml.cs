@@ -24,6 +24,12 @@ namespace BookStore_Management.Views
                 NoneAvailableLabel.IsEnabled = true;
                 NoneAvailableLabel.IsVisible = true;
             }
+            else
+            {
+
+                NoneAvailableLabel.IsEnabled = false;
+                NoneAvailableLabel.IsVisible = false;
+            }
         }
 
         protected override void OnAppearing()
@@ -33,8 +39,18 @@ namespace BookStore_Management.Views
             // Reset the 'resume' id, since we just want to re-start here
             ((App)App.Current).ResumeAtOrderId = -1;
             ObservableCollection<Order> orders = new ObservableCollection<Order>(App.database.GetAllOrders());
+            if (orders.Count == 0)
+            {
+                NoneAvailableLabel.IsEnabled = true;
+                NoneAvailableLabel.IsVisible = true;
+            }
+            else
+            {
 
-          
+                NoneAvailableLabel.IsEnabled = false;
+                NoneAvailableLabel.IsVisible = false;
+            }
+
             OrdersListView.ItemsSource = orders;
         }
 

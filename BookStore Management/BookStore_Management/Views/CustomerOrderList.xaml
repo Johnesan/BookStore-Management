@@ -6,10 +6,9 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <Label Text="No Book Available. Please Add Books!" x:Name="NoneAvailableLabel"/>
-            </StackLayout>
-            
-            <Grid>
+                <Label Text="No Book Available. Please Add Books!" HorizontalTextAlignment="Center" FontSize="22" x:Name="NoneAvailableLabel"  Margin="3,5,3,5"/>
+           
+            <Grid VerticalOptions="FillAndExpand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
@@ -40,6 +39,8 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
+            </StackLayout>
+
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -26,13 +26,14 @@ namespace BookStore_Management.Views
             BookTitleLabel.Text = book.Title;
             BookAuthorLabel.Text = book.Author;
             BookPriceLabel.Text = book.Price;
+            BookPublisherLabel.Text = book.Publisher;
             SelectedBook = book;
 
         }
 
         public async void RentButtonClicked(object sender, EventArgs e)
         {
-            if (GenderPicker == null)
+            if (GenderPicker.SelectedItem == null)
             {
                 await DisplayAlert("Invalid Field", "Please Select Your Gender", "OK");
                 return;
@@ -55,7 +56,7 @@ namespace BookStore_Management.Views
             
 
             App.database.SaveOrder(order);
-            SelectedBook.NumberOfCopies -= 1;
+            SelectedBook.NumberOfCopies = SelectedBook.NumberOfCopies - 1;
             App.database.SaveBook(SelectedBook);
             await Navigation.PopAsync();
 
@@ -83,11 +84,11 @@ namespace BookStore_Management.Views
             order.BookTitle = BookTitleLabel.Text;
             order.Date = DateTime.Now;
             order.Completed = false;
-
-
-
+            
 
             App.database.SaveOrder(order);
+            SelectedBook.NumberOfCopies = SelectedBook.NumberOfCopies - 1;
+            App.database.SaveBook(SelectedBook);
             await Navigation.PopAsync();
 
         }

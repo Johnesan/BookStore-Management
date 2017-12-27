@@ -18,11 +18,17 @@ namespace BookStore_Management.Views
         public BooksList()
         {
             InitializeComponent();
-            ObservableCollection<Order> orders = new ObservableCollection<Order>(App.database.GetAllOrders());
-            if (orders.Count == 0)
+            ObservableCollection<Book> books = new ObservableCollection<Book>(App.database.GetAllBooks());
+            if (books.Count == 0)
             {
                 NoneAvailableLabel.IsEnabled = true;
                 NoneAvailableLabel.IsVisible = true;
+            }
+            else
+            {
+
+                NoneAvailableLabel.IsEnabled = false;
+                NoneAvailableLabel.IsVisible = false;
             }
         }
 
@@ -40,10 +46,13 @@ namespace BookStore_Management.Views
             }
             BooksListView.ItemsSource = books;
         }
-     
+
         async private void OnAddButtonClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SingleBook());
+            await Navigation.PushAsync(new SingleBook()
+            {
+                Title = "Add New Book"
+            });
         }
 
         async private void OnSingleBookSelected(object sender, SelectedItemChangedEventArgs e)
@@ -51,10 +60,9 @@ namespace BookStore_Management.Views
             ((App)App.Current).ResumeAtBookId = (e.SelectedItem as Book).ID;
             Debug.WriteLine("setting ResumeAtTodoId = " + (e.SelectedItem as Book).ID);
             var book = e.SelectedItem as Book;
-                var imageUrl = book.CoverImage;
+            var imageUrl = book.CoverImage;
             await Navigation.PushAsync(new SingleBook(imageUrl)
             {
-               
                 BindingContext = e.SelectedItem as Book
             });
 
